@@ -48,3 +48,4 @@ app.use((err, _q, res, _n) => {
 
 module.exports = app;
 if (require.main === module) app.listen(c.port, () => console.log(`Clutch Arena backend on :${c.port} (${c.cfEnv})`));
+module.exports = app;
