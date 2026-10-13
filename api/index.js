@@ -1,7 +1,12 @@
-const app = require('../src/server');
-module.exports = app;
-const app = require('../src/server.js');
+const express = require('express');
+const app = express();
 
-module.exports = (req, res) => {
-  app(req, res);
-};
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok', message: 'Clutch Arena API is running smoothly!' });
+});
+
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Welcome to Clutch Arena API' });
+});
+
+module.exports = app;
